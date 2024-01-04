@@ -25,7 +25,6 @@ with open(csvpath,'r') as csvfile:
     greatest_increase_date = date_list[changes.index(greatest_increase)+1]
     greatest_decrease_date = date_list[changes.index(greatest_decrease)+1]
 
-
 analysis = f'''
     Financial Analysis
     .................................
@@ -36,7 +35,6 @@ analysis = f'''
     Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})
     '''
 print(analysis)
-
 
 new_path = os.path.join ('Analysis', 'Financial Analysis.txt')
 with open (new_path,'w',newline='') as txtfile:
