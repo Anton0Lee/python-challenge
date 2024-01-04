@@ -6,18 +6,18 @@ import statistics
 csvpath = os.path.join('Resources','election_data.csv')
 with open(csvpath,'r') as csvfile:
     csvreader = csv.reader(csvfile)
-    #storing header row
+#storing header row
     header = next(csvreader)
-    #converting csvfile's data into list
+#converting csvfile's data into list
     candidates_list = [] 
     for row in csvreader:
         candidate = row[2]
         candidates_list.append(candidate)
-    #identifying candidates' names
+#identifying candidates' names
     candidates_names = sorted(list(set(candidates_list)))
-    #finding total number of vote counts
+#finding total number of vote counts
     vote_count = len(candidates_list)
-    #calculating vote counts for each candidates
+#calculating vote counts for each candidates
     Charles_vote=0
     Diana_vote=0
     Raymon_vote=0
@@ -28,7 +28,7 @@ with open(csvpath,'r') as csvfile:
             Diana_vote += 1
         elif name == "Raymon Anthony Doane":
             Raymon_vote += 1
-    #calculating %vote counts of each candidates
+#calculating %vote counts of each candidates
     Charles_pct = Charles_vote/vote_count*100
     Diana_pct = Diana_vote/vote_count*100
     Raymon_pct = Raymon_vote/vote_count*100
